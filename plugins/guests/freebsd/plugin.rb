@@ -21,6 +21,11 @@ module VagrantPlugins
         Cap::ConfigureNetworks
       end
 
+      guest_capability(:freebsd, :mount_virtualbox_shared_folder) do
+        require_relative "cap/mount_virtualbox_shared_folder"
+        Cap::MountVirtualBoxSharedFolder
+      end
+
       guest_capability(:freebsd, :rsync_install) do
         require_relative "cap/rsync"
         Cap::RSync
